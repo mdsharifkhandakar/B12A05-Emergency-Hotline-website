@@ -107,7 +107,223 @@ body {
   padding-bottom: 21px;
 }
 
+/* Main Section */
+.main-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 48px 58px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+}
+
+/* Cards Section */
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  gap: 30px;
+}
+
+.emergency-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid #e9ecef;
+}
+
+.emergency-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-heart {
+  position: absolute;
+  top: 36px;
+  right: 32px;
+  font-size: 32px;
+  color: #dee2e6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-heart.active {
+  color: #dc3545;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: #ffe3e2;
+  border-radius: 16%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.card-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 5px;
+}
+
+.card-title-en {
+  font-size: 1.2rem;
+  color: #5c5c5c;
+  margin-bottom: 24px;
+}
+
+.card-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111;
+  letter-spacing: 2px;
+}
+
+.card-category {
+  display: inline-block;
+  background: #f2f2f2;
+  color: #5c5c5c;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-copy {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  color: #495057;
+}
+
+.btn-copy:hover {
+  background: #e9ecef;
+}
+
+.btn-call {
+  background: #00a63e;
+  color: white;
+}
+
+.btn-call:hover {
+  background: #038a38;
+}
+
+/* History Section */
+.history-section {
+  width: 120%;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.history-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.clear-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.clear-btn:hover {
+  background: #218838;
+}
+
+.history-list {
+  list-style: none;
+}
+
+.history-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.history-service {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.history-number,
+.history-time {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.empty-history {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 40px 0;
+}
+
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .history-section {
+    width: 100%;
+    position: static;
+    order: -1;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     padding: 12px 20px;
@@ -136,5 +352,34 @@ body {
 
   .hero-slogan {
     font-size: 0.95rem;
+  }
+
+  .main-container {
+    padding: 20px 15px;
+  }
+
+  .cards-section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card-number {
+    font-size: 2rem;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+
+  .card-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
